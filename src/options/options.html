@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <title>Turbolt — Cài đặt</title>
+  <link rel="stylesheet" href="options.css" />
+</head>
+<body>
+  <main>
+    <div class="page-header">
+      <span class="logo-mark" id="logoMark"></span>
+      <div>
+        <h1>Turbolt</h1>
+        <p class="subtitle">Cài đặt tăng tốc download</p>
+      </div>
+    </div>
+
+    <section class="card">
+      <div class="card-title">
+        <span class="card-icon" id="iconPerf"></span>
+        <h2>Hiệu năng tải</h2>
+      </div>
+
+      <label class="field">
+        <div class="field-label-row">
+          <span>Số luồng song song tối đa</span>
+          <output id="maxThreadsValue" class="value-pill"></output>
+        </div>
+        <input type="range" id="maxThreads" min="1" max="16" step="1" />
+      </label>
+      <p class="hint">Nhiều luồng hơn giúp tận dụng băng thông tốt hơn khi server giới hạn tốc độ mỗi kết nối (rất phổ biến với CDN). 6–8 là điểm cân bằng tốt cho phần lớn trường hợp.</p>
+
+      <label class="field">
+        <span>Giới hạn băng thông (KB/s, 0 = không giới hạn)</span>
+        <input type="number" id="bandwidthLimitKBs" min="0" step="64" />
+      </label>
+
+      <label class="field">
+        <span>Ngưỡng dùng đa luồng (MB) — file nhỏ hơn sẽ tải đơn luồng</span>
+        <input type="number" id="multiThreadSizeThresholdMB" min="0" step="1" />
+      </label>
+
+      <label class="field">
+        <span>Kích thước tối đa cho đa luồng trong RAM (MB)</span>
+        <input type="number" id="maxFileSizeForMultiThreadMB" min="64" step="64" />
+      </label>
+      <p class="hint">File lớn hơn ngưỡng này tự động chuyển sang tải đơn luồng qua trình duyệt để tránh tràn bộ nhớ (RAM) của tiện ích.</p>
+    </section>
+
+    <section class="card">
+      <div class="card-title">
+        <span class="card-icon" id="iconDetect"></span>
+        <h2>Phát hiện tự động</h2>
+      </div>
+      <label class="switch-row">
+        <span>Hiện nút tải nhanh khi rê chuột vào link tải</span>
+        <span class="switch"><input type="checkbox" id="autoDetectDownloads" /><span class="switch-track"></span></span>
+      </label>
+      <label class="switch-row">
+        <span>Tự động phát hiện video HLS/DASH trên trang</span>
+        <span class="switch"><input type="checkbox" id="autoDetectStreams" /><span class="switch-track"></span></span>
+      </label>
+    </section>
+
+    <div class="save-row">
+      <button id="save">Lưu cài đặt</button>
+      <span id="savedMsg" class="saved-msg" hidden></span>
+    </div>
+  </main>
+  <script type="module" src="options.js"></script>
+</body>
+</html>

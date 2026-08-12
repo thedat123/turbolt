@@ -1,0 +1,41 @@
+{
+  "manifest_version": 3,
+  "name": "Turbolt — Download Accelerator & Manager",
+  "version": "0.1.0",
+  "description": "Free & open-source download accelerator: multi-threaded downloads, HLS video capture, pause/resume, and a clean queue manager. No ads, no telemetry.",
+  "permissions": [
+    "downloads",
+    "storage",
+    "notifications",
+    "webRequest",
+    "contextMenus",
+    "unlimitedStorage"
+  ],
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "src/service-worker/service-worker.js",
+    "type": "module"
+  },
+  "action": {
+    "default_popup": "src/popup/popup.html",
+    "default_title": "Turbolt — Download Accelerator",
+    "default_icon": {
+      "16": "public/icons/icon16.png",
+      "48": "public/icons/icon48.png",
+      "128": "public/icons/icon128.png"
+    }
+  },
+  "options_page": "src/options/options.html",
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["src/detector/detector.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "icons": {
+    "16": "public/icons/icon16.png",
+    "48": "public/icons/icon48.png",
+    "128": "public/icons/icon128.png"
+  }
+}

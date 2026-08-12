@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Turbolt — Free Open-Source Download Accelerator & Manager</title>
+<meta name="description" content="Turbolt is a free, open-source download accelerator for Chrome. Multi-threaded downloads, HLS/M3U8 video capture, no ads, no telemetry. The free IDM alternative." />
+<link rel="canonical" href="https://thedat123.github.io/turbolt/" />
+<link rel="icon" type="image/png" sizes="128x128" href="https://thedat123.github.io/turbolt/icons/icon128.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="https://thedat123.github.io/turbolt/icons/icon48.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="https://thedat123.github.io/turbolt/icons/icon16.png" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Turbolt — Free Open-Source Download Accelerator" />
+<meta property="og:description" content="Multi-threaded downloads, HLS/M3U8 video capture, no ads, no telemetry. The free, open-source IDM alternative for Chrome." />
+<meta property="og:url" content="https://thedat123.github.io/turbolt/" />
+<meta property="og:image" content="https://thedat123.github.io/turbolt/og-image.png" />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Turbolt — Free Open-Source Download Accelerator" />
+<meta name="twitter:description" content="Multi-threaded downloads, HLS/M3U8 video capture, no ads, no telemetry. The free IDM alternative for Chrome." />
+<meta name="twitter:image" content="https://thedat123.github.io/turbolt/og-image.png" />
+
+<!-- Structured data: helps Google show rich results (rating, price = free) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Turbolt",
+  "applicationCategory": "BrowserApplication",
+  "operatingSystem": "Chrome, Edge, Brave",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "description": "Free, open-source multi-threaded download accelerator and manager browser extension with HLS/M3U8 video capture.",
+  "url": "https://thedat123.github.io/turbolt/",
+  "sameAs": ["https://github.com/thedat123/turbolt"]
+}
+</script>
+
+<style>
+  :root {
+    --bg: #ffffff;
+    --bg-soft: #f7f8fa;
+    --fg: #14161a;
+    --fg-muted: #5b6270;
+    --accent: #2563eb;
+    --border: #e6e8ec;
+    --radius: 14px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0e1015;
+      --bg-soft: #171a21;
+      --fg: #f2f3f5;
+      --fg-muted: #9aa1ad;
+      --border: #262b35;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    line-height: 1.55;
+  }
+  a { color: var(--accent); }
+  .wrap { max-width: 980px; margin: 0 auto; padding: 0 20px; }
+
+  header.hero {
+    padding: 80px 0 60px;
+    text-align: center;
+    background: radial-gradient(circle at 50% -10%, color-mix(in srgb, var(--accent) 12%, transparent), transparent 60%);
+  }
+  .logo { width: 56px; height: 56px; }
+  h1 {
+    font-size: clamp(28px, 5vw, 44px);
+    margin: 10px 0 14px;
+    letter-spacing: -0.02em;
+  }
+  h1 span { color: var(--accent); }
+  .subtitle { color: var(--fg-muted); font-size: 18px; max-width: 620px; margin: 0 auto 30px; }
+  .cta-row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .btn {
+    display: inline-block;
+    padding: 12px 22px;
+    border-radius: 10px;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 15px;
+  }
+  .btn-primary { background: var(--accent); color: #fff; }
+  .btn-secondary { background: var(--bg-soft); color: var(--fg); border: 1px solid var(--border); }
+  .badges { margin-top: 18px; color: var(--fg-muted); font-size: 13px; }
+
+  section { padding: 50px 0; }
+  h2 { font-size: 26px; text-align: center; margin-bottom: 34px; }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 18px;
+  }
+  .card {
+    background: var(--bg-soft);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 22px;
+  }
+  .card .icon { font-size: 26px; margin-bottom: 10px; display: block; }
+  .card h3 { margin: 0 0 8px; font-size: 16px; }
+  .card p { margin: 0; color: var(--fg-muted); font-size: 14px; }
+
+  table { width: 100%; border-collapse: collapse; overflow-x: auto; display: block; }
+  th, td { padding: 12px 14px; border-bottom: 1px solid var(--border); text-align: left; font-size: 14px; }
+  th { color: var(--fg-muted); font-weight: 600; }
+  td.yes { color: #16a34a; font-weight: 700; }
+  td.no { color: var(--fg-muted); }
+
+  .faq details {
+    background: var(--bg-soft);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 18px;
+    margin-bottom: 10px;
+  }
+  .faq summary { cursor: pointer; font-weight: 600; }
+  .faq p { color: var(--fg-muted); margin: 10px 0 0; font-size: 14px; }
+
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 30px 0;
+    text-align: center;
+    color: var(--fg-muted);
+    font-size: 13px;
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <img class="logo" src="icons/icon128.png" alt="Turbolt logo" width="56" height="56" />
+    <h1>The free, open-source <span>download accelerator</span> for your browser</h1>
+    <p class="subtitle">Turbolt speeds up downloads with true multi-threaded connections, captures HLS/M3U8 video streams, and never shows you an ad or tracks you. A free IDM alternative — no trial, no license key.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="https://chrome.google.com/webstore" rel="noopener">Add to Chrome — it's free</a>
+      <a class="btn btn-secondary" href="https://github.com/thedat123/turbolt" rel="noopener">View on GitHub ★</a>
+    </div>
+    <p class="badges">GPL-3.0 licensed · No account required · Zero telemetry</p>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <h2>Why Turbolt</h2>
+    <div class="grid">
+      <div class="card">
+        <span class="icon">🚀</span>
+        <h3>Real multi-threaded downloads</h3>
+        <p>Splits files into up to 16 parallel connections via HTTP Range requests — the same core technique IDM uses, built directly into your browser.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🎬</span>
+        <h3>HLS / M3U8 video capture</h3>
+        <p>Automatically detects streaming video manifests on any page, lets you pick a quality, and saves the whole stream as one file.</p>
+      </div>
+      <div class="card">
+        <span class="icon">⏸</span>
+        <h3>Pause, resume, cancel</h3>
+        <p>Real control over active connections — not just a hidden progress bar.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🔒</span>
+        <h3>Zero telemetry, zero ads</h3>
+        <p>No analytics, no accounts, no upsells. Fully open source, so every claim here is independently verifiable in the code.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🐢</span>
+        <h3>Bandwidth limiting</h3>
+        <p>Cap download speed so background downloads never choke your video call or game.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🆓</span>
+        <h3>Free forever, GPL-3.0</h3>
+        <p>No trial period, no premium tier. The license legally prevents any fork from ever going closed-source.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>How Turbolt compares</h2>
+    <table>
+      <thead>
+        <tr><th></th><th>Browser default</th><th>Turbolt</th><th>IDM (paid)</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Multi-threaded downloads</td><td class="no">✕</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+        <tr><td>HLS / M3U8 video capture</td><td class="no">✕</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+        <tr><td>Pause / resume</td><td class="no">✕</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+        <tr><td>Open source & verifiable</td><td class="no">—</td><td class="yes">✓</td><td class="no">✕</td></tr>
+        <tr><td>Price</td><td>Free</td><td class="yes">Free forever</td><td>Paid after trial</td></tr>
+        <tr><td>Ads / telemetry</td><td>—</td><td class="yes">None</td><td>—</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="faq">
+  <div class="wrap">
+    <h2>Frequently asked questions</h2>
+    <details>
+      <summary>Is Turbolt really free, unlike IDM?</summary>
+      <p>Yes. Turbolt has no trial period, license key, or premium tier — it's licensed under GPL-3.0, which legally requires it (and any fork) to stay free and open source.</p>
+    </details>
+    <details>
+      <summary>Can Turbolt download HLS (.m3u8) videos?</summary>
+      <p>Yes. Turbolt watches for HLS and DASH manifests as you browse and lets you download the full stream as a single file. It intentionally does not support DRM-protected content (e.g. Netflix, YouTube Premium).</p>
+    </details>
+    <details>
+      <summary>Does Turbolt collect any data?</summary>
+      <p>No. Turbolt has no analytics, no tracking, and no account system. Everything runs locally in your browser, and the full source is public so anyone can verify this.</p>
+    </details>
+    <details>
+      <summary>Which browsers are supported?</summary>
+      <p>Chrome, Edge, Brave, and other Chromium-based browsers via Manifest V3. Firefox support is on the roadmap.</p>
+    </details>
+    <details>
+      <summary>Why are some downloads not multi-threaded?</summary>
+      <p>Some servers don't support HTTP Range requests, or a file may exceed the configured size limit for in-memory multi-threading. Turbolt automatically falls back to your browser's native downloader in these cases — downloads never fail silently.</p>
+    </details>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    Turbolt is free and open source under the <a href="https://github.com/thedat123/turbolt/blob/main/LICENSE">GPL-3.0 license</a>.
+    <br />
+    <a href="https://github.com/thedat123/turbolt">GitHub</a> ·
+    <a href="https://github.com/thedat123/turbolt/blob/main/PRIVACY.md">Privacy</a> ·
+    <a href="https://github.com/thedat123/turbolt/issues">Report an issue</a>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Turbolt</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="brand">
+      <span class="logo-mark" id="logoMark"></span>
+      <span class="title">Turbolt</span>
+    </div>
+    <div class="header-right">
+      <span id="aggregateSpeed" class="aggregate-speed" hidden>
+        <span class="pulse-dot"></span>
+        <span id="aggregateSpeedValue"></span>
+      </span>
+      <button id="openSettings" class="icon-btn" title="Cài đặt" aria-label="Cài đặt"></button>
+    </div>
+  </header>
+
+  <section id="detectedStreams" class="streams-banner" hidden>
+    <span class="streams-icon" id="streamsIcon"></span>
+    <span id="streamsText" class="streams-text"></span>
+    <button id="viewStreams" class="btn-chip">Xem &amp; tải</button>
+  </section>
+  <div id="streamsPanel" class="streams-panel" hidden></div>
+
+  <nav class="tabs" id="tabs">
+    <button class="tab is-active" data-filter="all">Tất cả</button>
+    <button class="tab" data-filter="active">Đang tải</button>
+    <button class="tab" data-filter="done">Hoàn tất</button>
+  </nav>
+
+  <ul id="downloadList" class="download-list"></ul>
+  <div id="emptyState" class="empty-state" hidden>
+    <span id="emptyIcon" class="empty-icon"></span>
+    <p class="empty-title">Chưa có lượt tải nào</p>
+    <span class="empty-sub">Dán link bên dưới để bắt đầu, hoặc click phải vào 1 link bất kỳ</span>
+  </div>
+
+  <footer class="footer">
+    <div class="input-pill">
+      <span class="input-icon" id="inputIcon"></span>
+      <input id="urlInput" type="text" placeholder="Dán link để tải..." />
+    </div>
+    <button id="addDownload" class="btn-primary">Tải</button>
+  </footer>
+
+  <script type="module" src="popup.js"></script>
+</body>
+</html>

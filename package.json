@@ -1,0 +1,36 @@
+{
+  "name": "turbolt",
+  "version": "0.1.0",
+  "description": "Turbolt — free, open-source multi-threaded download accelerator & manager browser extension.",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite build --watch",
+    "build": "vite build && node scripts/copy-static.js",
+    "lint": "eslint src --ext .js",
+    "zip": "node scripts/zip-dist.js",
+    "test:engine": "node tests/engine.test.mjs",
+    "test:server": "node tests/throttled-server.mjs"
+  },
+  "devDependencies": {
+    "archiver": "^7.0.1",
+    "eslint": "^9.9.0",
+    "vite": "^5.4.0"
+  },
+  "license": "GPL-3.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thedat123/turbolt.git"
+  },
+  "keywords": [
+    "download-manager",
+    "download-accelerator",
+    "browser-extension",
+    "chrome-extension",
+    "idm-alternative",
+    "hls-downloader",
+    "m3u8-downloader",
+    "multi-threaded-download",
+    "open-source"
+  ]
+}
