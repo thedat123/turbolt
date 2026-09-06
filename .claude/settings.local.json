@@ -58,7 +58,17 @@
       "Bash(npx --yes sharp-cli -i concept-1-dark-minimal.svg -o icon128.png resize 128 128)",
       "Bash(npx --yes sharp-cli -i concept-1-dark-minimal.svg -o icon48.png resize 48 48)",
       "Bash(npx --yes sharp-cli -i concept-1-dark-minimal.svg -o icon16.png resize 16 16)",
-      "Bash(echo \"exit: $?\")"
+      "Bash(echo \"exit: $?\")",
+      "Bash(git ls-tree *)",
+      "Bash(git -C /mnt/d/Turbolt reflog --all)",
+      "Bash(git -C /mnt/d/Turbolt fsck --dangling --unreachable)",
+      "Bash(git -C /mnt/d/Turbolt ls-tree -r master --name-only)",
+      "Read(//mnt/d/**)",
+      "Bash(git checkout *)",
+      "Bash(git reset *)",
+      "Bash(git stash *)",
+      "Bash(git push *)",
+      "Bash(gh auth *)"
     ]
   }
 }

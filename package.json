@@ -9,11 +9,13 @@
     "build": "vite build && node scripts/copy-static.js",
     "lint": "eslint src --ext .js",
     "zip": "node scripts/zip-dist.js",
+    "publish:chrome": "node scripts/publish-chrome-store.js",
     "test:engine": "node tests/engine.test.mjs",
     "test:server": "node tests/throttled-server.mjs"
   },
   "devDependencies": {
     "archiver": "^7.0.1",
+    "chrome-webstore-upload": "^3.2.0",
     "eslint": "^9.9.0",
     "vite": "^5.4.0"
   },

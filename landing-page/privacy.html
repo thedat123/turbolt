@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Privacy Policy — Turbolt</title>
+<meta name="description" content="Turbolt privacy policy: no data collection, no analytics, no accounts. Everything runs locally in your browser." />
+<link rel="canonical" href="https://thedat123.github.io/turbolt/privacy.html" />
+<link rel="icon" type="image/png" sizes="128x128" href="https://thedat123.github.io/turbolt/icons/icon128.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="https://thedat123.github.io/turbolt/icons/icon48.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="https://thedat123.github.io/turbolt/icons/icon16.png" />
+<style>
+  :root {
+    --bg: #ffffff;
+    --bg-soft: #f7f8fa;
+    --fg: #14161a;
+    --fg-muted: #5b6270;
+    --accent: #2563eb;
+    --border: #e6e8ec;
+    --radius: 14px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0e1015;
+      --bg-soft: #171a21;
+      --fg: #f2f3f5;
+      --fg-muted: #9aa1ad;
+      --border: #262b35;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    line-height: 1.6;
+  }
+  a { color: var(--accent); }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 60px 20px 80px; }
+  h1 { font-size: 30px; letter-spacing: -0.02em; margin-bottom: 4px; }
+  .updated { color: var(--fg-muted); font-size: 14px; margin-bottom: 30px; }
+  h2 { font-size: 19px; margin: 34px 0 12px; }
+  p { margin: 0 0 14px; }
+  table { width: 100%; border-collapse: collapse; margin: 14px 0; }
+  th, td { padding: 10px 12px; border-bottom: 1px solid var(--border); text-align: left; font-size: 14px; vertical-align: top; }
+  th { color: var(--fg-muted); font-weight: 600; }
+  ul { padding-left: 20px; }
+  li { margin-bottom: 6px; }
+  .back { display: inline-block; margin-bottom: 30px; font-size: 14px; }
+  footer { margin-top: 50px; padding-top: 20px; border-top: 1px solid var(--border); color: var(--fg-muted); font-size: 13px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="./">&larr; Back to Turbolt</a>
+  <h1>Privacy Policy</h1>
+  <p class="updated">Last updated: 2026-08-11</p>
+
+  <p>Turbolt does <strong>not collect, store, or transmit</strong> any personal data or browsing data to any server operated by the Turbolt developers — because no such server exists. The entire extension runs locally in your browser.</p>
+
+  <h2>Permissions requested and why</h2>
+  <table>
+    <thead><tr><th>Permission</th><th>Why it's needed</th></tr></thead>
+    <tbody>
+      <tr><td><code>downloads</code></td><td>Save downloaded files to your device via the browser's standard downloads API.</td></tr>
+      <tr><td><code>storage</code></td><td>Store the download queue and settings locally on your device (not synced anywhere by Turbolt itself).</td></tr>
+      <tr><td><code>notifications</code></td><td>Show a notification when a download finishes.</td></tr>
+      <tr><td><code>webRequest</code></td><td>Observe request URLs to detect <code>.m3u8</code>/<code>.mpd</code> video manifests — request bodies and other traffic are not read or stored.</td></tr>
+      <tr><td><code>contextMenus</code></td><td>Add a "Download with Turbolt" item to the right-click menu.</td></tr>
+      <tr><td><code>host_permissions: &lt;all_urls&gt;</code></td><td>Allow downloading files and detecting video streams on any site you choose to download from — Turbolt only acts when you initiate a download or view its popup, and never runs a background scrape of page content.</td></tr>
+    </tbody>
+  </table>
+
+  <h2>What Turbolt does NOT do</h2>
+  <ul>
+    <li>No ads, no third-party tracking or analytics SDKs.</li>
+    <li>No transmission of browsing history, tab lists, or page content anywhere.</li>
+    <li>No sale or sharing of data with third parties — there is no data collected to begin with.</li>
+    <li>No account or sign-in required.</li>
+  </ul>
+
+  <h2>Open source = verifiable</h2>
+  <p>Turbolt is open source under the GPL-3.0 license. Anyone can read the full source code on <a href="https://github.com/thedat123/turbolt">GitHub</a> to independently verify every claim on this page.</p>
+
+  <h2>Contact</h2>
+  <p>Questions about privacy? Open an <a href="https://github.com/thedat123/turbolt/issues">issue on GitHub</a>.</p>
+
+  <footer>Turbolt is free and open source under the <a href="https://github.com/thedat123/turbolt/blob/main/LICENSE">GPL-3.0 license</a>.</footer>
+</div>
+</body>
+</html>

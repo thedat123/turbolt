@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Turbolt — Download Accelerator & Manager",
   "version": "0.1.0",
-  "description": "Free & open-source download accelerator: multi-threaded downloads, HLS video capture, pause/resume, and a clean queue manager. No ads, no telemetry.",
+  "description": "Free open-source download accelerator: multi-threaded downloads, HLS video capture, pause/resume. No ads, no telemetry.",
   "permissions": [
     "downloads",
     "storage",
